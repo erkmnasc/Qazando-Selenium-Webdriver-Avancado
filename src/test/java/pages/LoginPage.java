@@ -45,6 +45,7 @@ public class LoginPage extends RunCucumber {
 
     public void acessarTelaCadastro() {
         clickElement(botaoAcessarCadastro);
+
     }
 
 }
