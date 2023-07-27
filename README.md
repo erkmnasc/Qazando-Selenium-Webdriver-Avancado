@@ -32,10 +32,10 @@ Para executar no Firefox digite:
  mvn test -Dtest=RunCucumber -Dbrowser=firefox
 ```
 
-Para gerar os relátorios.
+Para gerar os relátorios digite:
 
 ```
-Digite o comando: mvn cluecumber-report:reporting
+mvn cluecumber-report:reporting
 ```
 
 ## 🛠️ Construído com
