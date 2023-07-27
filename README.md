@@ -1,6 +1,6 @@
 # Automação de Testes Avançado Com Selenium e Java
 
-Automação de Testes Avançado Com Selenium e Java Avançado. Projeto realizado no curso Trilha QA da Qazando.
+Automação de Testes Avançado Com Selenium e Java. Projeto realizado no curso Trilha QA da Qazando.
 
 ## 🚀 Começando
 
