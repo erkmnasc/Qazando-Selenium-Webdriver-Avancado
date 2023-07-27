@@ -1,11 +1,10 @@
-# Automação Web com CodeceptJS + Webdriver Avançado
+# Automação de Testes Avançado Com Selenium e Java
 
-Automação de Testes com Selenium WebDriver e Java. Projeto realizado no curso Trilha QA da Qazando.
+Automação de Testes Avançado Com Selenium e Java Básico. Projeto realizado no curso Trilha QA da Qazando.
 
 ## 🚀 Começando
 
-Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de
-desenvolvimento e teste.
+Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
 
 Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto.
 
@@ -16,22 +15,27 @@ Explicar como executar os testes automatizados para este sistema.
 ### Baixando o projeto
 
 ```
-git clone https://github.com/erkmnasc/Qazando-Selenium-Webdriver-Avancado.git
+git clone https://github.com/erkmnasc/Qazando-Selenium-Webdriver-Basico.git
 ```
 
 ### 🔩 Analise os testes de ponta a ponta
 
-Digito o código para iniciar os testes automatizados.
+Para executar no Google Chrome digite:
 
 ```
-mvn test -Dtest=**/*RunCucumberTest cluecumber-report:reporting
-mvn test -Dtest=RunCucumber cluecumber-report:reporting
+mvn test -Dtest=RunCucumber -Dbrowser=chrome
 ```
 
-Digito o código para abrir o resultado dos testes automatizados.
+Para executar no Firefox digite:
 
 ```
-allure serve output
+ mvn test -Dtest=RunCucumber -Dbrowser=firefox
+```
+
+Para gerar os relátorios.
+
+```
+Digite o comando: mvn cluecumber-report:reporting
 ```
 
 ## 🛠️ Construído com
@@ -41,7 +45,11 @@ Mencione as ferramentas que você usou para criar seu projeto
 * [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)
 * [Java Development Kit 8](https://www.oracle.com/br/java/technologies/javase-jdk8-doc-downloads.html)
 * [Mavem](https://maven.apache.org/)
+* [Cucumber](https://cucumber.io/)
 * [Junit](https://junit.org/junit5/)
+* [GitHub Actions](https://github.com/features/actions)
+* [Slack](https://slack.com/)
+* [cluecumber-report-plugin](https://github.com/trivago/cluecumber)
 * [Google WebDriver](https://chromedriver.chromium.org/downloads)
 * [Firefox WebDriver](https://github.com/mozilla/geckodriver)
 
