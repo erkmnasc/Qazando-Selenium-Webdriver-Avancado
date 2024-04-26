@@ -1,76 +1,68 @@
-# Automação de Testes Avançado Com Selenium e Java
+Claro, aqui está o documento sem a seção "Expressões de gratidão":
 
-Automação de Testes Avançado Com Selenium e Java. Projeto realizado no curso Trilha QA da Qazando.
+---
+
+# Documentação do Projeto: Automação de Testes Avançado com Selenium e Java
+
+Este projeto é um conjunto de testes automatizados desenvolvido como parte do curso Trilha QA da Qazando.
 
 ## 🚀 Começando
 
-Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
+Estas instruções permitirão que você obtenha uma cópia do projeto em funcionamento em sua máquina local para fins de desenvolvimento e teste.
 
-Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto.
+### Pré-requisitos
 
-## ⚙️ Executando os testes
+- Git
+- Java Development Kit 8 ou superior
+- Maven
 
-Explicar como executar os testes automatizados para este sistema.
+### Instalação
 
-### Baixando o projeto
+1. Clone o repositório:
 
-```
+```bash
 git clone https://github.com/erkmnasc/Qazando-Selenium-Webdriver-Basico.git
 ```
 
-### 🔩 Analise os testes de ponta a ponta
+### Implantação
 
-Para executar no Google Chrome digite:
+Consulte as instruções específicas de implantação para configurar o projeto.
 
-```
+## ⚙️ Executando os testes
+
+Para executar os testes automatizados:
+
+- No Google Chrome:
+
+```bash
 mvn test -Dtest=RunCucumber -Dbrowser=chrome
 ```
 
-Para executar no Firefox digite:
+- No Firefox:
 
-```
- mvn test -Dtest=RunCucumber -Dbrowser=firefox
+```bash
+mvn test -Dtest=RunCucumber -Dbrowser=firefox
 ```
 
-Para gerar os relátorios digite:
+Para gerar os relatórios:
 
-```
+```bash
 mvn cluecumber-report:reporting
 ```
 
 ## 🛠️ Construído com
 
-Mencione as ferramentas que você usou para criar seu projeto
-
-* [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)
-* [Java Development Kit 8](https://www.oracle.com/br/java/technologies/javase-jdk8-doc-downloads.html)
-* [Mavem](https://maven.apache.org/)
-* [Cucumber](https://cucumber.io/)
-* [Junit](https://junit.org/junit5/)
-* [GitHub Actions](https://github.com/features/actions)
-* [Slack](https://slack.com/)
-* [cluecumber-report-plugin](https://github.com/trivago/cluecumber)
-* [Google WebDriver](https://chromedriver.chromium.org/downloads)
-* [Firefox WebDriver](https://github.com/mozilla/geckodriver)
+- Selenium WebDriver
+- Java Development Kit 8
+- Maven
+- Cucumber
+- Junit
+- GitHub Actions
+- Slack
+- cluecumber-report-plugin
+- Google WebDriver
+- Firefox WebDriver
 
 ## ✒️ Autores
 
-Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
-
-* **QA** - *Automação* - *Documentação* - [Erick Nascimento]
-
-GitHub - (https://github.com/erkmnasc)
-
-Linkedin - (https://www.linkedin.com/in/erick-nascimento/)
-
-GitShowCase - (https://www.gitshowcase.com/erkmnasc)
-
-## 🎁 Expressões de gratidão
-
-* Conte a outras pessoas sobre este projeto 📢;
-* Convide alguém da equipe para uma cerveja 🍺;
-* Um agradecimento publicamente 🫂;
-* etc.
-
----
-⌨️ com ❤️ por [Erick Nascimento](https://github.com/erkmnasc) 😊
+- Erick Nascimento - QA, Automação, Documentação - [Perfil do GitHub](https://github.com/erkmnasc), [Linkedin](https://www.linkedin.com/in/erick-nascimento/), [GitShowcase](https://www.gitshowcase.com/erkmnasc)
