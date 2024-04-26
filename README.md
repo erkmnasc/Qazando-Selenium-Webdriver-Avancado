@@ -1,7 +1,3 @@
-Claro, aqui está o documento sem a seção "Expressões de gratidão":
-
----
-
 # Documentação do Projeto: Automação de Testes Avançado com Selenium e Java
 
 Este projeto é um conjunto de testes automatizados desenvolvido como parte do curso Trilha QA da Qazando.
