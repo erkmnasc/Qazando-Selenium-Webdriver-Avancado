@@ -1,16 +1,16 @@
 package pages;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import runner.RunCucumber;
+
 import static support.Commands.*;
 
 public class CadastroUsuarioPage extends RunCucumber {
 
-    private By campoNome = By.id("user");
-    private By campoEmail = By.id("email");
-    private By campoSenha = By.id("password");
-    private By botaoFazerCadastro = By.id("btnRegister");
+    private final By campoNome = By.id("user");
+    private final By campoEmail = By.id("email");
+    private final By campoSenha = By.id("password");
+    private final By botaoFazerCadastro = By.id("btnRegister");
 
     public void preencheNome(String nome) {
         fillField(campoNome, nome);
@@ -29,6 +29,6 @@ public class CadastroUsuarioPage extends RunCucumber {
     }
 
     public void verificaCadastroSucesso() {
-        checkMessage(By.id("swal2-title"),"Cadastro realizado!");
+        checkMessage(By.id("swal2-title"), "Cadastro realizado!");
     }
 }

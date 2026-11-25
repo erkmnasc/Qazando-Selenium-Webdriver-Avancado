@@ -3,9 +3,8 @@ package runner;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
-import java.util.concurrent.TimeUnit;
 
 public class RunBase {
 
@@ -15,36 +14,47 @@ public class RunBase {
         return driver;
     }
 
+    // -Dbrowser=chrome | chrome-ci | firefox | edge (padrão: chrome)
     public static WebDriver getDriver(String browser) {
 
         if (driver != null) {
             driver.quit();
         }
 
+        if (browser == null || browser.isEmpty()) {
+            browser = "chrome";
+        }
+
+        // O Selenium Manager baixa o driver certo para o navegador instalado
         switch (browser) {
             case "chrome":
                 driver = new ChromeDriver();
+                driver.manage().window().maximize();
                 break;
             case "chrome-ci":
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("--headless");
+                chromeOptions.addArguments("--headless=new", "--window-size=1280,1024");
                 driver = new ChromeDriver(chromeOptions);
                 break;
             case "firefox":
                 driver = new FirefoxDriver();
+                driver.manage().window().maximize();
                 break;
             case "edge":
-                throw new IllegalArgumentException("Edge ainda nao suportado");
+                driver = new EdgeDriver();
+                driver.manage().window().maximize();
+                break;
             default:
-                throw new IllegalArgumentException("Navegador não encontrado! Passe um navegador existente: chrome, forefox ou edge.");
-        }
-
-        if (driver != null) {
-            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-            driver.manage().window().maximize();
+                throw new IllegalArgumentException("Navegador não encontrado! Passe um navegador existente: chrome, chrome-ci, firefox ou edge.");
         }
 
         return driver;
     }
 
+    public static void quitDriver() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+    }
 }

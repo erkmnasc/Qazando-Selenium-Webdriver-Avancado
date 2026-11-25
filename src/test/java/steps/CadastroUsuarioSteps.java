@@ -1,14 +1,11 @@
 package steps;
 
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.pt.Dado;
-import cucumber.api.java.pt.Então;
-import cucumber.api.java.pt.Quando;
+import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.Então;
+import io.cucumber.java.pt.Quando;
 import pages.CadastroUsuarioPage;
 import pages.LoginPage;
 import runner.RunCucumber;
-import support.ScreenShotUtils;
 
 import static support.Utils.*;
 
@@ -18,8 +15,8 @@ public class CadastroUsuarioSteps extends RunCucumber {
     CadastroUsuarioPage cadastroPage = new CadastroUsuarioPage();
 
     @Dado("^que estou na tela de cadastro de usuário$")
-    public void que_estou_na_tela_de_login() {
-        loginPage.acessarAplicao();
+    public void que_estou_na_tela_de_cadastro() {
+        loginPage.acessarAplicacao();
         loginPage.acessarTelaCadastro();
     }
 
@@ -39,10 +36,4 @@ public class CadastroUsuarioSteps extends RunCucumber {
     public void vejo_mensagem_cadastro_sucesso() {
         cadastroPage.verificaCadastroSucesso();
     }
-
-    @After
-    public static void afterScenario(Scenario scenario) {
-        ScreenShotUtils.addScreenShotOnScenario(scenario);
-    }
-
 }

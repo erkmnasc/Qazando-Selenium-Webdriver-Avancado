@@ -38,14 +38,7 @@ public class Utils extends RunCucumber {
     public static String getName() {
 
         String[] names = {"Erick", "Eric", "Test", "Teste", "Testing"};
-
-        int minimo = 0;
-        int maximo = (names.length) - 1;
-
-        Random random = new Random();
-        int posicao = random.nextInt(maximo - minimo) + minimo;
-
-        return names[posicao];
+        return names[new Random().nextInt(names.length)];
     }
 
 }

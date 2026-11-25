@@ -7,20 +7,19 @@ import static support.Commands.*;
 
 public class LoginPage extends RunCucumber {
 
-    private String URL = "http://automationpratice.com.br/";
-    private By botaoAcessarLogin = By.cssSelector(".right_list_fix > li > a > .fa-user");
-    private By campoEmail = By.id("user");
-    private By campoSenha = By.id("password");
-    private By botaoFazerLogin = By.id("btnLogin");
-    private By botaoAcessarCadastro = By.cssSelector(".right_list_fix > li > a > .fa-lock");
+    private static final String URL = "https://automationpratice.com.br/";
+    private final By botaoAcessarLogin = By.cssSelector(".right_list_fix > li > a > .fa-user");
+    private final By campoEmail = By.id("user");
+    private final By campoSenha = By.id("password");
+    private final By botaoFazerLogin = By.id("btnLogin");
+    private final By botaoAcessarCadastro = By.cssSelector(".right_list_fix > li > a > .fa-lock");
 
-    public void acessarAplicao() {
+    public void acessarAplicacao() {
         getDriver(System.getProperty("browser")).get(URL);
     }
 
     public void acessarTelaLogin() {
         clickElement(botaoAcessarLogin);
-        getDriver().findElement(botaoAcessarLogin).click();
     }
 
     public void preencheEmail(String email) {
@@ -45,7 +44,6 @@ public class LoginPage extends RunCucumber {
 
     public void acessarTelaCadastro() {
         clickElement(botaoAcessarCadastro);
-
     }
 
 }

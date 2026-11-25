@@ -1,64 +1,52 @@
-# Documentação do Projeto: Automação de Testes Avançado com Selenium e Java
+# Selenium WebDriver com Java (avançado)
 
-Este projeto é um conjunto de testes automatizados desenvolvido como parte do curso Trilha QA da Qazando.
+[![E2E tests](https://github.com/erkmnasc/Qazando-Selenium-Webdriver-Avancado/actions/workflows/ci.yml/badge.svg)](https://github.com/erkmnasc/Qazando-Selenium-Webdriver-Avancado/actions/workflows/ci.yml)
 
-## 🚀 Começando
+Projeto do módulo avançado de Selenium com Java do curso Trilha QA da
+Qazando. BDD com Cucumber (Gherkin em português), Page Objects, comandos
+reutilizáveis com espera explícita e screenshot anexado ao relatório quando um
+cenário falha. Os testes rodam no site de prática
+[automationpratice.com.br](https://automationpratice.com.br).
 
-Estas instruções permitirão que você obtenha uma cópia do projeto em funcionamento em sua máquina local para fins de desenvolvimento e teste.
+## Stack
 
-### Pré-requisitos
+Java 17 · Selenium 4 · Cucumber 7 · JUnit 4 · Maven · GitHub Actions
 
-- Git
-- Java Development Kit 8 ou superior
-- Maven
+## Cenários
 
-### Instalação
+- **Login** (`login.feature`): login com sucesso e um Esquema do Cenário com
+  5 combinações de e-mail e senha inválidos ou vazios, conferindo a mensagem
+  de cada campo.
+- **Cadastro** (`cadastro_usuario.feature`): cadastro de usuário com sucesso,
+  com nome, e-mail e senha gerados a cada execução.
 
-1. Clone o repositório:
+## Estrutura
 
-```bash
-git clone https://github.com/erkmnasc/Qazando-Selenium-Webdriver-Basico.git
+```
+src/test/java/
+  pages/    page objects (LoginPage, CadastroUsuarioPage)
+  steps/    definições dos passos e hook de screenshot
+  runner/   runner do JUnit e criação do driver
+  support/  comandos com espera explícita, screenshot e massa de teste
 ```
 
-### Implantação
+## Como rodar
 
-Consulte as instruções específicas de implantação para configurar o projeto.
-
-## ⚙️ Executando os testes
-
-Para executar os testes automatizados:
-
-- No Google Chrome:
+Precisa de Java 17, Maven e do navegador escolhido. O driver é baixado pelo
+Selenium Manager.
 
 ```bash
-mvn test -Dtest=RunCucumber -Dbrowser=chrome
+mvn test                        # Chrome
+mvn test -Dbrowser=chrome-ci    # Chrome headless
+mvn test -Dbrowser=firefox
+mvn test -Dbrowser=edge
+mvn test -Dcucumber.filter.tags="@login"   # só os cenários de login
 ```
 
-- No Firefox:
+O relatório HTML do Cucumber fica em `target/reports/cucumber.html`.
 
-```bash
-mvn test -Dtest=RunCucumber -Dbrowser=firefox
-```
+## CI
 
-Para gerar os relatórios:
-
-```bash
-mvn cluecumber-report:reporting
-```
-
-## 🛠️ Construído com
-
-- Selenium WebDriver
-- Java Development Kit 8
-- Maven
-- Cucumber
-- Junit
-- GitHub Actions
-- Slack
-- cluecumber-report-plugin
-- Google WebDriver
-- Firefox WebDriver
-
-## ✒️ Autores
-
-- Erick Nascimento - QA, Automação, Documentação - [Perfil do GitHub](https://github.com/erkmnasc), [Linkedin](https://www.linkedin.com/in/erick-nascimento/), [GitShowcase](https://www.gitshowcase.com/erkmnasc)
+O GitHub Actions roda os testes em Chrome headless a cada push na `master`, em
+pull requests, manualmente e toda segunda-feira, e guarda o relatório como
+artefato (`.github/workflows/ci.yml`).

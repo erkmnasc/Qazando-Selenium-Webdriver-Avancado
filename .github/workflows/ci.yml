@@ -1,0 +1,33 @@
+name: E2E tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # segunda-feira, 9h (horário de Brasília)
+    - cron: '0 12 * * 1'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+
+      - name: Testes (Chrome headless)
+        run: mvn -B test -Dbrowser=chrome-ci
+
+      - name: Relatório do Cucumber
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-report
+          path: target/reports/
+          if-no-files-found: ignore
