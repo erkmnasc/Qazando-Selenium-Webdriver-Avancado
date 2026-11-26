@@ -47,6 +47,6 @@ O relatório HTML do Cucumber fica em `target/reports/cucumber.html`.
 
 ## CI
 
-O GitHub Actions roda os testes em Chrome headless a cada push na `master`, em
+O GitHub Actions roda os testes em Chrome headless a cada push na `main`, em
 pull requests, manualmente e toda segunda-feira, e guarda o relatório como
 artefato (`.github/workflows/ci.yml`).
