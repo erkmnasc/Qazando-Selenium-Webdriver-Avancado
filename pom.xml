@@ -36,6 +36,13 @@
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- O Cucumber 8 usa o Jackson 3 para gerar os relatórios -->
+        <dependency>
+            <groupId>tools.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>3.3.0</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
