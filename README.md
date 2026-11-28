@@ -10,7 +10,7 @@ cenário falha. Os testes rodam no site de prática
 
 ## Stack
 
-Java 17 · Selenium 4 · Cucumber 7 · JUnit 4 · Maven · GitHub Actions
+Java 17 · Selenium 4 · Cucumber 8 · JUnit 4 · Maven · GitHub Actions
 
 ## Cenários
 
